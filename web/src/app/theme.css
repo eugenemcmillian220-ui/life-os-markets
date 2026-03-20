@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-background: rgb(15 23 42);
+  --color-foreground: rgb(226 232 240);
+  --color-card: rgb(30 41 59);
+  --color-card-foreground: rgb(226 232 240);
+  --color-primary: rgb(15 23 42);
+  --color-primary-foreground: rgb(16 185 129);
+  --color-secondary: rgb(30 41 59);
+  --color-secondary-foreground: rgb(226 232 240);
+  --color-muted: rgb(51 65 85);
+  --color-muted-foreground: rgb(148 163 184);
+  --color-accent: rgb(16 185 129);
+  --color-accent-foreground: rgb(15 23 42);
+  --color-destructive: rgb(239 68 68);
+  --color-destructive-foreground: rgb(226 232 240);
+  --color-border: rgb(51 65 85);
+  --color-input: rgb(30 41 59);
+  --color-ring: rgb(16 185 129);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  [data-theme='light'] {
+    --color-background: rgb(248 250 252);
+    --color-foreground: rgb(15 23 42);
+    --color-card: rgb(241 245 250);
+    --color-card-foreground: rgb(15 23 42);
+    --color-primary: rgb(15 23 42);
+    --color-primary-foreground: rgb(16 185 129);
+    --color-secondary: rgb(241 245 250);
+    --color-secondary-foreground: rgb(15 23 42);
+    --color-muted: rgb(226 232 240);
+    --color-muted-foreground: rgb(71 85 105);
+    --color-accent: rgb(16 185 129);
+    --color-accent-foreground: rgb(248 250 252);
+    --color-destructive: rgb(239 68 68);
+    --color-destructive-foreground: rgb(248 250 252);
+    --color-border: rgb(226 232 240);
+    --color-input: rgb(241 245 250);
+    --color-ring: rgb(16 185 129);
+    color-scheme: light;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: 'rounding' 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-emerald {
+    background-image: linear-gradient(to right, #10b981, #0d9488);
+  }
+
+  .gradient-sunset {
+    background-image: linear-gradient(to right, #f59e0b, #f97316);
+  }
+
+  .pulse-soft {
+    animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .market-heartbeat {
+    animation: heartbeat 1.2s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    25% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+}
